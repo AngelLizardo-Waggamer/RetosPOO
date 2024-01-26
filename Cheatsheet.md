@@ -41,6 +41,8 @@ Al usarlo tenemos la opción de usar estas funciones para leer distintos tipos d
 | .nextLong() | Long |
 | .nextShort() | Short |
 
+*NOTA*: Al momento de querer capturar datos tipo `char` varias veces es recomendable ocupar la función `.next()` en vez de la función `.nextLine()` para evitar errores.
+
 ## Cómo importar/crear un paquete con archivos locales
 1. Crear una carpeta donde se vaya a guardar la clase que quieras crear como paquete
 1. En el archivo .java se debe de escribir `package <nombre_de_la_carpeta>`
