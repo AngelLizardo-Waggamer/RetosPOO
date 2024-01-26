@@ -16,7 +16,7 @@ public class Main{
                         RetoDos.exec();
                     }
                     default->{
-                        System.out.println("No se encuentra ese reto.");
+                        System.out.println("Intenta un numero valido");
                     }
                 }
         entrada.close();
