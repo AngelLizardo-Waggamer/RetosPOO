@@ -37,7 +37,7 @@ public class RetoUno {
                 sexo = entrada.next().charAt(0);
                 //Calcular indice e imprimirlo
                 MCM.format("%.2f", persona.calcularMCM(peso, estatura, sexo));
-                System.out.println("Su indice de masa corporal magra es de " + MCM);
+                System.out.println("Su indice de masa corporal magra es de " + MCM + "kg");
                 MCM.close();
             }
             case 'C'->{
@@ -54,7 +54,7 @@ public class RetoUno {
                 sexo = entrada.next().charAt(0);
                 //Calculo de GEB e imprimirlo
                 GEB.format("%.2f", persona.calcularGEB(peso, estatura, edad, sexo));
-                System.out.println("Su gasto energético basal es de " + GEB);
+                System.out.println("Su gasto energético basal es de " + GEB + " calorias.");
                 GEB.close();
             }
         }
