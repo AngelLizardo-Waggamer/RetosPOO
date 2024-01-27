@@ -78,4 +78,4 @@ public class Main{
 Algunas de las librerias que he descubierto que son utiles a la hora de crear código son las siguientes:
 | Libreria | Como importarla | Funcion | Funciones principales |
 | :--- | :---: | --- | :---: |
-| Formatter | `importa java.util.Formatter` | Te permite darle formato a numeros con punto decimal, es decir, si se tiene una variable de valor `95.6755` el formatter te permite mostrar unicamente `95.67` para que se vea más limpio. | Considere `fmt` como una variable declarada de tipo Formatter. `fmt.format(<forma del numero>, <valor numerico>)`
+| Formatter | `import java.util.Formatter` | Te permite darle formato a numeros con punto decimal, es decir, si se tiene una variable de valor `95.6755` el formatter te permite mostrar unicamente `95.67` para que se vea más limpio. | Considere `fmt` como una variable declarada de tipo Formatter. `fmt.format(<forma del numero>, <valor numerico>)`
