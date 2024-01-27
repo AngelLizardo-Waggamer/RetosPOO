@@ -1,43 +1,52 @@
 #TODO: 
-El programa mostrará un menú conformado por tres opciones, dichas opciones están representadas por una letra; a continuación, se muestra la lista de opciones: 
+Escribe un programa que solicite un número de calificaciones de un alumno; al finalizar se deberá mostrar el promedio de las calificaciones de dicho alumno. 
 
-A. Cálculo de masa corporal (índice de masa corporal) 
-B. Cálculo de masa corporal magra 
-C. Cálculo de metabolismo basal (gasto energético basal) 
-Para realizar el cálculo de cada opción, te proporcionan los siguientes datos: 
+Se deberá preguntar al usuario cuántas calificaciones desea capturar. 
+Antes de capturar una calificación se debe mostrará una leyenda indicando el número de calificación que se está capturando. 
+Al finalizar el proceso de captura se debe imprimir un texto indicando el promedio del alumno. 
+2. Realiza un programa que lleve el control de compra y venta de cajas de papel de un pequeño negocio. 
 
-1. Para realizar el cálculo de la masa corporal se deberán solicitar al paciente los siguientes datos: 
+Se te indican las opciones del menú que se mostrarán en el programa, sin embargo, debes considerar que para acceder a dicho menú se deberá solicitar un usuario y contraseña, estos datos, al ser capturados incorrectamente por el usuario, serán solicitados tantas veces como sea necesario, hasta que el usuario capture los datos correctamente. 
+ 
+A continuación, se enlistan las opciones consideradas en el menú: 
 
-El peso en kg 
-La estatura en cm 
-La fórmula del IMC es la siguiente: 
+Comprar cajas de papel 
+Vender cajas de papel 
+Mostrar reporte 
+Salir del programa 
+En la opción a se deben capturar los siguientes datos: 
 
-IMC = peso (kg) / estatura (m) * estatura (m) 
+Número de cajas a comprar 
+Costo de las cajas a comprar 
+Una vez capturados los datos, se deberá mostrar el siguiente mensaje: 
 
-Una vez obtenido el cálculo del índice de masa corporal, se debe mostrar la interpretación de la condición del paciente según la siguiente tabla: 
+La compra realizada por {c} cajas al costo {c} es igual a {monto}. 
+ 
+Para la opción b se deben capturar los siguientes datos: 
 
-Menor a 18.9 = peso bajo 
-18.50 a 24.99 = peso normal 
-25.00 a 29.99 = sobrepeso 
-30.00 a 34.99 = obesidad leve 
-35.00 a 39.99 = obesidad media 
-Mayor a 40.0 = obesidad mórbida 
-2. Para realizar el cálculo de masa corporal magra se proporcionan los siguientes datos del paciente: 
+Número de cajas a vender 
+Costo de las cajas a vender 
+Una vez capturados los datos, se deberá mostrar el siguiente mensaje: 
 
-El peso en kg 
-La estatura en cm 
-El sexo del paciente 
-Las fórmulas para el cálculo son las siguientes: 
+La venta realizada por {c} cajas al precio de {p} es igual a {monto}. 
+ 
+Para la opción c se deberán mostrar los siguientes datos: 
 
-Masa corporal magra kg (mujer) = (1.07 x peso (kg)) - 148 x (peso (kg)2 (al cuadrado) / estatura (cm)2 (al cuadrado)). 
-Masa corporal magra kg (hombre) = (1.10 x peso (kg)) - 128 x (peso (kg)2 (al cuadrado) / estatura (cm)2 (al cuadrado)) 
-3. Para el cálculo del metabolismo basal se solicitan los siguientes datos: 
+La cantidad total de ventas 
+La cantidad total de compras 
+Los ingresos generados por ventas 
+Los egresos generados por compras 
+Monto en la caja 
+En el caso de la opción s, sí el usuario indica esta opción, el programa se terminará; en caso contrario, el menú se mostrará hasta que el usuario indique esta opción. 
+ 
+Al terminar la ejecución del programa se debe mostrará un resumen de actividades, además de un mensaje de despedida.  
 
-El peso en kg 
-La estatura en cm 
-Edad del paciente 
-El sexo del paciente 
-Las fórmulas de Harris-Benedict para el cálculo del metabolismo basal son las siguientes: 
+Los puntos a mostrar al finalizar el programa son los siguientes: 
 
-GEB (mujer) = 655.1 + (9.563 * peso (kg)) + (1.85 * estatura (cm)) - (4.676 * edad) 
-GEB (hombre) = 66.5 + (13.75 * peso (kg)) + (5.003 * estatura (cm)) - (6.775 * edad) 
+La cantidad total de operaciones realizadas 
+La cantidad total de ventas 
+La cantidad total de compras 
+Monto en la caja 
+Los ingresos generados por ventas 
+Los egresos generados por compras 
+Mensaje de despedida 
