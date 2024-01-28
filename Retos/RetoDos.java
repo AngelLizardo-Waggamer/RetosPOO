@@ -40,19 +40,22 @@ public class RetoDos {
 
     private class PuntoDeVenta{
         private String adminUsername, adminPassword;
-        private int numVentas, numCompras;
+        private int numVentas, numCompras, operacionesTotales;
         float balance, ingresosTotales, egresosTotales;
-
 
         public PuntoDeVenta(String user, String pass){
             this.adminUsername = user;
             this.adminPassword = pass;
+            this.balance = 0;
+            this.ingresosTotales = 0;
+            this.egresosTotales = 0;
         }
         public void start(){
             System.out.println("---- PUNTO DE VENTA v1.0 \"Venta de cajas\" ----");
             iniciarSesion();
-            int opt = obtenerOpcion();
+            int opt = 0;
             while(opt != 4){
+                opt = obtenerOpcion();
                 switch(opt){
                     case 1->{
                         int nCajas;
@@ -63,24 +66,45 @@ public class RetoDos {
                         System.out.println("Costo por pieza: ");
                         costoCajas = entrada.nextFloat();
                         // Calculo de monto y salida de datos
-                        System.out.println("La compra realizada por " + nCajas + " cajas al costo de $" + costoCajas + " es igual a $" + venta(nCajas, costoCajas));
+                        System.out.println("La compra realizada por " + nCajas + " cajas al costo de $" + costoCajas + " es igual a $" + compra(nCajas, costoCajas));
                     }
                     case 2->{
                         // Vender cajas de papel
+                        int nCajas;
+                        float precioCajas;
+                        //Ingreso de datos
+                        System.out.println("¿Cuantas cajas se van a vender?");
+                        nCajas = entrada.nextInt();
+                        System.out.println("Costo por pieza: ");
+                        precioCajas = entrada.nextFloat();
+                        // Calculo de monto y salida de datos
+                        System.out.println("La venta realizada por " + nCajas + " cajas al precio de $" + precioCajas + " es igual a $" + venta(nCajas, precioCajas));
                     }
                     case 3->{
                         // Mostrar Reporte
+                        System.out.println("--- REPORTE GENERAL ---");
+                        System.out.println("Balance: " + imprimirBalance(balance));
+                        System.out.println("Numero de ventas totales: " + numVentas);
+                        System.out.println("Numero de compras totales: " + numCompras);
+                        System.out.println("Ingresos totales: $" + ingresosTotales);
+                        System.out.println("Egresos totales: $" + egresosTotales);
                     }
                     case 4->{
-                        //Salir 
-                        System.out.println("--- FIN DEL PROGRAMA ---");
+                        //Salir
+                        System.out.println("----------------------");
+                        System.out.println("Balance final: " + imprimirBalance(balance));
+                        System.out.println("Numero de ventas totales: " + numVentas);
+                        System.out.println("Numero de compras totales: " + numCompras);
+                        System.out.println("Operaciones totales: " + operacionesTotales);
+                        System.out.println("Ingresos totales: $" + ingresosTotales);
+                        System.out.println("Egresos totales: $" + egresosTotales);
+                        System.out.println("--- ¡GRACIAS POR SU CONFIANZA! ---");
                     }
                     default->{
                         System.out.println("Inserte una opcion valida");
                     }
                 }
             }
-            System.out.println("--- FIN DEL PROGRAMA ---");
         }
         private void iniciarSesion(){
             String tempUser = ".";
@@ -99,16 +123,34 @@ public class RetoDos {
             }
         }
         private int obtenerOpcion(){
+            System.out.println("----------------------");
             System.out.println("¿Que desea hacer?\n1. Comprar cajas\n2. Vender cajas\n3. Mostrar reporte \n4. Salir del programa");
             int res;
             res = entrada.nextInt();
             return res;
         }
-        private float venta(int cantCajas, float costCajas){
+        private float compra(int cantCajas, float costCajas){
             float res = (float)(costCajas * cantCajas);
+            numCompras++;
+            operacionesTotales++;
             egresosTotales += res;
             balance -= res;
             return res;
+        }
+        private float venta(int cantCajas, float precioCajas){
+            float res = (float)(cantCajas * precioCajas);
+            numVentas++;
+            operacionesTotales++;
+            ingresosTotales += res;
+            balance += res;
+            return res;
+        }
+        private String imprimirBalance(float cantidad){
+            if(cantidad<0){
+                return (String)("-$"+Math.abs(cantidad));
+            }else{
+                return (String)("$"+Math.abs(cantidad));
+            }
         }
     }
 }
