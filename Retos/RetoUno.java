@@ -33,7 +33,7 @@ public class RetoUno {
                 peso = entrada.nextFloat();
                 System.out.println("Ingrese su estatura (en cm): ");
                 estatura = entrada.nextFloat();
-                System.out.println("Ingrese su sexo: ");
+                System.out.println("Ingrese su sexo (M/F): ");
                 sexo = entrada.next().charAt(0);
                 //Calcular indice e imprimirlo
                 MCM.format("%.2f", persona.calcularMCM(peso, estatura, sexo));
@@ -50,7 +50,7 @@ public class RetoUno {
                 estatura = entrada.nextFloat();
                 System.out.println("Ingrese su edad: ");
                 edad = entrada.nextInt();
-                System.out.println("Ingrese su sexo: ");
+                System.out.println("Ingrese su sexo (M/F): ");
                 sexo = entrada.next().charAt(0);
                 //Calculo de GEB e imprimirlo
                 GEB.format("%.2f", persona.calcularGEB(peso, estatura, edad, sexo));
