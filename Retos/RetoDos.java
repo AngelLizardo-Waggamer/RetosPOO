@@ -39,8 +39,10 @@ public class RetoDos {
     }
 
     private class PuntoDeVenta{
-        private String adminUsername;
-        private String adminPassword;
+        private String adminUsername, adminPassword;
+        private int numVentas, numCompras;
+        float balance, ingresosTotales, egresosTotales;
+
 
         public PuntoDeVenta(String user, String pass){
             this.adminUsername = user;
@@ -53,7 +55,15 @@ public class RetoDos {
             while(opt != 4){
                 switch(opt){
                     case 1->{
-                        // Comprar cajas de papel
+                        int nCajas;
+                        float costoCajas;
+                        // Ingreso de datos
+                        System.out.println("¿Cuantas cajas se van a comprar?: ");
+                        nCajas = entrada.nextInt();
+                        System.out.println("Costo por pieza: ");
+                        costoCajas = entrada.nextFloat();
+                        // Calculo de monto y salida de datos
+                        System.out.println("La compra realizada por " + nCajas + " cajas al costo de $" + costoCajas + " es igual a $" + venta(nCajas, costoCajas));
                     }
                     case 2->{
                         // Vender cajas de papel
@@ -62,7 +72,7 @@ public class RetoDos {
                         // Mostrar Reporte
                     }
                     case 4->{
-                        //Salir
+                        //Salir 
                         System.out.println("--- FIN DEL PROGRAMA ---");
                     }
                     default->{
@@ -72,7 +82,7 @@ public class RetoDos {
             }
             System.out.println("--- FIN DEL PROGRAMA ---");
         }
-        public void iniciarSesion(){
+        private void iniciarSesion(){
             String tempUser = ".";
             String tempPass = ".";
             while(tempUser.equals(this.adminUsername) == false && tempPass.equals(this.adminPassword) == false){
@@ -88,10 +98,16 @@ public class RetoDos {
                 }
             }
         }
-        public int obtenerOpcion(){
+        private int obtenerOpcion(){
             System.out.println("¿Que desea hacer?\n1. Comprar cajas\n2. Vender cajas\n3. Mostrar reporte \n4. Salir del programa");
             int res;
             res = entrada.nextInt();
+            return res;
+        }
+        private float venta(int cantCajas, float costCajas){
+            float res = (float)(costCajas * cantCajas);
+            egresosTotales += res;
+            balance -= res;
             return res;
         }
     }
