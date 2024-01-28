@@ -1,2 +1,5 @@
 # Archivos .class
 *.class
+
+# Notas particulares
+*.txt
