@@ -15,6 +15,9 @@ public class Main{
                     case 2->{
                         RetoDos.exec();
                     }
+                    case 3->{
+                        RetoTres.exec();
+                    }
                     default->{
                         System.out.println("Intenta un numero valido");
                     }
