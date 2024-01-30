@@ -1,52 +1,21 @@
 #TODO: 
-Escribe un programa que solicite un número de calificaciones de un alumno; al finalizar se deberá mostrar el promedio de las calificaciones de dicho alumno. 
+Realiza un programa que simule un diccionario de palabras a través del uso de vectores unidimensionales. El diccionario estará conformado por dos vectores unidimensionales, el primer arreglo o vector contendrá las palabras, el segundo vector contendrá el significado de cada palabra. 
+El programa deberá mostrar un menú con las siguientes opciones: 
+A. Enlistar palabras del diccionario 
+B. Buscar palabras en el diccionario 
+C. Detalle del diccionario 
+S. Finalizar programa 
+El diccionario está conformado por 10 palabras. 
+El usuario indicará la opción a ejecutar, hasta que elija la opción Finalizar programa. 
+La opción A enlistará todas las palabras almacenadas. 
+La opción B enlistará todas las palabras almacenadas, además de solicitar al usuario que capture la palabra de la cual necesita su significado; si el usuario indica una palabra que no se encuentre en la lista, el programa deberá mostrar un mensaje donde se indique que la palabra no existe, en caso contrario, se deberá mostrar el significado de la palabra (segundo vector). 
+La opción C detallará los valores de los vectores. Los datos a mostrar son los siguientes: 
+Cantidad de palabras del diccionario (primer vector). 
+Lista de palabras (primer vector) acompañada por la cantidad de caracteres de cada palabra y cantidad de caracteres de su significado (segundo vector). 
+La lógica de búsqueda y lista de información se deberá realizar a través de métodos. 
 
-Se deberá preguntar al usuario cuántas calificaciones desea capturar. 
-Antes de capturar una calificación se debe mostrará una leyenda indicando el número de calificación que se está capturando. 
-Al finalizar el proceso de captura se debe imprimir un texto indicando el promedio del alumno. 
-2. Realiza un programa que lleve el control de compra y venta de cajas de papel de un pequeño negocio. 
-
-Se te indican las opciones del menú que se mostrarán en el programa, sin embargo, debes considerar que para acceder a dicho menú se deberá solicitar un usuario y contraseña, estos datos, al ser capturados incorrectamente por el usuario, serán solicitados tantas veces como sea necesario, hasta que el usuario capture los datos correctamente. 
- 
-A continuación, se enlistan las opciones consideradas en el menú: 
-
-Comprar cajas de papel 
-Vender cajas de papel 
-Mostrar reporte 
-Salir del programa 
-En la opción a se deben capturar los siguientes datos: 
-
-Número de cajas a comprar 
-Costo de las cajas a comprar 
-Una vez capturados los datos, se deberá mostrar el siguiente mensaje: 
-
-La compra realizada por {c} cajas al costo {c} es igual a {monto}. 
- 
-Para la opción b se deben capturar los siguientes datos: 
-
-Número de cajas a vender 
-Costo de las cajas a vender 
-Una vez capturados los datos, se deberá mostrar el siguiente mensaje: 
-
-La venta realizada por {c} cajas al precio de {p} es igual a {monto}. 
- 
-Para la opción c se deberán mostrar los siguientes datos: 
-
-La cantidad total de ventas 
-La cantidad total de compras 
-Los ingresos generados por ventas 
-Los egresos generados por compras 
-Monto en la caja 
-En el caso de la opción s, sí el usuario indica esta opción, el programa se terminará; en caso contrario, el menú se mostrará hasta que el usuario indique esta opción. 
- 
-Al terminar la ejecución del programa se debe mostrará un resumen de actividades, además de un mensaje de despedida.  
-
-Los puntos a mostrar al finalizar el programa son los siguientes: 
-
-La cantidad total de operaciones realizadas 
-La cantidad total de ventas 
-La cantidad total de compras 
-Monto en la caja 
-Los ingresos generados por ventas 
-Los egresos generados por compras 
-Mensaje de despedida 
+Realiza un programa que cuente la cantidad de números pares e impares en un arreglo bidimensional de NxM. Considera los siguientes puntos: 
+El usuario indicará la cantidad de filas y columnas, si el usuario coloca valores diferentes en N y M el programa se encargará de solicitarle que indique valores iguales de manera indefinida. 
+Los valores que contendrá el vector son agregados de manera automática y aleatoria tomando el rango del 1 al 100. 
+Se mostrará el conteo de números pares e impares, dicho conteo será por filas y posteriormente por columnas. 
+Se debe mostrar al final la suma de todos los números del vector. 
