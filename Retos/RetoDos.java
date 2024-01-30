@@ -41,7 +41,7 @@ public class RetoDos {
     private class PuntoDeVenta{
         private String adminUsername, adminPassword;
         private int numVentas, numCompras, operacionesTotales;
-        float balance, ingresosTotales, egresosTotales;
+        private float balance, ingresosTotales, egresosTotales;
 
         public PuntoDeVenta(String user, String pass){
             this.adminUsername = user;
