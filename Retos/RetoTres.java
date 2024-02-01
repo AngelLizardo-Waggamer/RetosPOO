@@ -1,5 +1,7 @@
 package Retos;
 
+import java.io.IOException;
+import java.util.IntSummaryStatistics;
 import java.util.Scanner;
 
 public class RetoTres {
@@ -19,7 +21,7 @@ public class RetoTres {
     };
     private static Scanner entrada;
     // ! Main method exec()
-    public static void exec(){
+    public static void exec() throws IOException{
         entrada = new Scanner(System.in);
         RetoTres mnCl = new RetoTres();
         // * Option input. Possible values {1, 2}
@@ -132,9 +134,113 @@ public class RetoTres {
         }
     }
     private class juegoNumeros{
-        private int filas, columnas;
+        private int filas, columnas, arrayNumeros[][], total, sumP[], sumI[];
+
+        public juegoNumeros(){
+            arrayNumeros = new int[][]{};
+        }
+
+        // ! Main method of juegoNumeros: start()
         public void start(){
             System.out.println("------ CONTADOR DE NUMEROS PARES/IMPARES v1.0 ------");
+            crearArray();
+            System.out.println("-------------------------");
+            imprimirArray();
+            System.out.println("-------------------------");
+            contarParesImpares('F');
+            System.out.println("-------------------------");
+            contarParesImpares('C');
+            System.out.println("-------------------------");
+            System.out.println("Suma total del array: " + total);
+        }
+        /**
+         * This function fills the number array.
+         * 
+         */
+        private void crearArray(){
+            int numeros[][] = new int[this.filas][this.columnas];
+            System.out.println("Ingresa el numero de filas: ");
+            this.filas = entrada.nextInt();
+            System.out.println("Ingresa el numero de columnas: ");
+            this.columnas = entrada.nextInt();
+            for(int fila = 0; fila < this.filas; fila++){{
+                for(int col = 0; col < this.columnas; col++){
+                    int num;
+                    System.out.println("Valor en la fila " + fila + " y columna " + col + ":");
+                    num = Integer.parseInt(entrada.next());
+                    numeros[fila][col] = num;
+                    this.total += num;
+                    if(num%2 == 0){
+                        sumP[fila] += num;
+                    }else{
+                        sumI[fila] += num;
+                    }
+                }
+            }}
+            this.arrayNumeros = numeros;
+        }
+        private void imprimirArray(){
+            System.out.println("Array resultante: ");
+            String Sfila = "";
+            int numT;
+            for(int fila = 0; fila < this.filas; fila++){{
+                for(int col = 0; col < this.columnas; col++){
+                    numT = this.arrayNumeros[fila][col];
+                    Sfila += espaciarNum(numT) + " | ";
+                }
+                System.out.println(Sfila);
+                Sfila = "";
+            }}
+        }
+        private void contarParesImpares(char funcion){
+            if(this.filas > this.columnas){
+                this.sumP = new int[this.filas];
+                this.sumI = new int[this.filas];
+            }else{
+                this.sumP = new int[this.columnas];
+                this.sumI = new int[this.columnas];
+            }
+            switch(funcion){
+                case 'F'->{
+                    for(int nFila = 0; nFila < this.filas; nFila++){
+                        System.out.println("Fila " + (nFila + 1) + " -> Pares: " + sumP[nFila] + " Impares: " + sumI[nFila]);
+                        sumP[nFila] = 0;
+                        sumI[nFila] = 0;
+                    }
+                }
+                case 'C'->{
+                    for(int col = 0; col < this.columnas; col++){{
+                        for(int fila = 0; fila < this.filas; fila++){
+                            int t;
+                            t = this.arrayNumeros[fila][col];
+                            if(t%2 == 0){
+                                sumP[fila] += t;
+                            }else{
+                                sumI[fila] += t;
+                            }
+                        }
+                    }}
+                    for(int nCol = 0; nCol < this.columnas; nCol++){
+                        System.out.println("Columna " + (nCol + 1) + " -> Pares: " + sumP[nCol] + " Impares: " + sumI[nCol]);
+                        sumP[nCol] = 0;
+                        sumI[nCol] = 0;
+                    }
+                }
+            }
+        }
+        private String espaciarNum(int numero){
+            String temp = Integer.toString(numero);
+            switch(temp.length()){
+                case 1->{
+                    return temp + "  ";
+                }
+                case 2->{
+                    return temp + " ";
+                }
+                default->{
+                    return temp;
+                }
+            }
         }
     }
 }
