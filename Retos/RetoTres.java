@@ -158,26 +158,32 @@ public class RetoTres {
          * 
          */
         private void crearArray(){
-            int numeros[][] = new int[this.filas][this.columnas];
             System.out.println("Ingresa el numero de filas: ");
             this.filas = entrada.nextInt();
             System.out.println("Ingresa el numero de columnas: ");
             this.columnas = entrada.nextInt();
+            this.arrayNumeros = new int[this.filas][this.columnas];
+            if(this.filas > this.columnas){
+                this.sumP = new int[this.filas];
+                this.sumI = new int[this.filas];
+            }else{
+                this.sumP = new int[this.columnas];
+                this.sumI = new int[this.columnas];
+            }
             for(int fila = 0; fila < this.filas; fila++){{
                 for(int col = 0; col < this.columnas; col++){
                     int num;
                     System.out.println("Valor en la fila " + fila + " y columna " + col + ":");
                     num = Integer.parseInt(entrada.next());
-                    numeros[fila][col] = num;
+                    this.arrayNumeros[fila][col] = num;
                     this.total += num;
                     if(num%2 == 0){
-                        sumP[fila] += num;
+                        sumP[fila] += 1;
                     }else{
-                        sumI[fila] += num;
+                        sumI[fila] += 1;
                     }
                 }
             }}
-            this.arrayNumeros = numeros;
         }
         private void imprimirArray(){
             System.out.println("Array resultante: ");
@@ -193,13 +199,6 @@ public class RetoTres {
             }}
         }
         private void contarParesImpares(char funcion){
-            if(this.filas > this.columnas){
-                this.sumP = new int[this.filas];
-                this.sumI = new int[this.filas];
-            }else{
-                this.sumP = new int[this.columnas];
-                this.sumI = new int[this.columnas];
-            }
             switch(funcion){
                 case 'F'->{
                     for(int nFila = 0; nFila < this.filas; nFila++){
@@ -214,9 +213,9 @@ public class RetoTres {
                             int t;
                             t = this.arrayNumeros[fila][col];
                             if(t%2 == 0){
-                                sumP[fila] += t;
+                                sumP[fila] += 1;
                             }else{
-                                sumI[fila] += t;
+                                sumI[fila] += 1;
                             }
                         }
                     }}
