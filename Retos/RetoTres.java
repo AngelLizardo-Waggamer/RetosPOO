@@ -39,8 +39,8 @@ public class RetoTres {
     }
 
     private class Diccionario{
-        private String[] palabras = new String[10];
-        private String[] significados = new String[10];
+        private String[] palabras = new String[]{};
+        private String[] significados = new String[]{};
 
         public Diccionario(String[] words, String[] meanings){ // ! Class constructor
             this.palabras = words;
