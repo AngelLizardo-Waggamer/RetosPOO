@@ -74,6 +74,34 @@ public class Main{
 }
 ```
 
+## ¿Cómo documentar funciones de manera correcta?
+Primero debemos comprender que los comentarios de funciones en Java tienen que ser con comentarios extendidos, es decir, tienes que seguir la siguiente estructura: 
+```java
+
+Class myClass{
+
+    public static void main(String[] args){
+        // ...
+    }
+
+    /**
+     * [Descripcion de la funcion y lo que hace]
+     * ? Si tiene parámetros: 
+     * @param myParam [descripcion del parametro]
+     * 
+     * ? Si devuelve un valor 
+     * @return [descripcion del valor de retorno]
+     * 
+     * ? Si tira algun error especifico
+     * @throws [Excepcion] [Explicacion de por que tira el error]
+     */ 
+    private void myFunc(){
+        // ...
+    }
+}
+```
+*NOTA*: Es importante mencionar que los comentarios pueden ocupar elementos de HTML. En [este](Retos/RetoTres.java) archivo podemos ver un poco más detalladamente cómo es esto.
+
 ## Librerías utiles
 Algunas de las librerias que he descubierto que son utiles a la hora de crear código son las siguientes:
 | Libreria | Como importarla | Funcion | Funciones principales |
