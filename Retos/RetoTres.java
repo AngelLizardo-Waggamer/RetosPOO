@@ -1,7 +1,6 @@
 package Retos;
 
 import java.io.IOException;
-import java.util.IntSummaryStatistics;
 import java.util.Scanner;
 
 public class RetoTres {
@@ -136,10 +135,6 @@ public class RetoTres {
     private class juegoNumeros{
         private int filas, columnas, arrayNumeros[][], total, sumP[], sumI[];
 
-        public juegoNumeros(){
-            arrayNumeros = new int[][]{};
-        }
-
         // ! Main method of juegoNumeros: start()
         public void start(){
             System.out.println("------ CONTADOR DE NUMEROS PARES/IMPARES v1.0 ------");
@@ -154,7 +149,8 @@ public class RetoTres {
             System.out.println("Suma total del array: " + total);
         }
         /**
-         * This function fills the number array.
+         * This function fills the number array. It first asks for the number of rows and columns, then it initializes the number array in the specified size.
+         * The arrays used to store the sum of odd and even numbers are initialized with the size of the bigger number: rows or columns.
          * 
          */
         private void crearArray(){
@@ -170,7 +166,7 @@ public class RetoTres {
                 this.sumP = new int[this.columnas];
                 this.sumI = new int[this.columnas];
             }
-            for(int fila = 0; fila < this.filas; fila++){{
+            for(int fila = 0; fila < this.filas; fila++){{ // * Store the values of the array with two for cycles.
                 for(int col = 0; col < this.columnas; col++){
                     int num;
                     System.out.println("Valor en la fila " + fila + " y columna " + col + ":");
@@ -185,37 +181,45 @@ public class RetoTres {
                 }
             }}
         }
+        /**
+         * Prints all the numbers array
+         */
         private void imprimirArray(){
             System.out.println("Array resultante: ");
             String Sfila = "";
             int numT;
             for(int fila = 0; fila < this.filas; fila++){{
+                Sfila += "| ";
                 for(int col = 0; col < this.columnas; col++){
                     numT = this.arrayNumeros[fila][col];
-                    Sfila += espaciarNum(numT) + " | ";
+                    Sfila += espaciarNum(numT) + "| ";
                 }
                 System.out.println(Sfila);
                 Sfila = "";
             }}
         }
+        /**
+         * Counts the odd and even numbers of the rows and columns and prints how many are of them depending on the chosen function.
+         * @param funcion {@code char} of the type of function required. {@code 'F'} for rows and {@code 'C'} for columns.
+         */
         private void contarParesImpares(char funcion){
             switch(funcion){
-                case 'F'->{
+                case 'F'->{ // * Case for rows
                     for(int nFila = 0; nFila < this.filas; nFila++){
                         System.out.println("Fila " + (nFila + 1) + " -> Pares: " + sumP[nFila] + " Impares: " + sumI[nFila]);
                         sumP[nFila] = 0;
                         sumI[nFila] = 0;
                     }
                 }
-                case 'C'->{
-                    for(int col = 0; col < this.columnas; col++){{
+                case 'C'->{ // * Case for columns
+                    for(int col = 0; col < this.columnas; col++){{ // * Check all the numbers in the array and count the odd/even numbers for the columns
                         for(int fila = 0; fila < this.filas; fila++){
                             int t;
                             t = this.arrayNumeros[fila][col];
                             if(t%2 == 0){
-                                sumP[fila] += 1;
+                                sumP[col] += 1;
                             }else{
-                                sumI[fila] += 1;
+                                sumI[col] += 1;
                             }
                         }
                     }}
@@ -227,6 +231,11 @@ public class RetoTres {
                 }
             }
         }
+        /**
+         * Gives to the given number a certain space format to complete the table correctly.
+         * @param numero the number to give format
+         * @return {@code String} with the space-formatted number
+         */
         private String espaciarNum(int numero){
             String temp = Integer.toString(numero);
             switch(temp.length()){
