@@ -1,6 +1,6 @@
 /*
  * Author: @angl.liz
- * Github: AngelHernandez-Waggamer
+ * Github: @AngelLizardo-Waggamer
  * 
  * This file is for the Challenge 1 of the POO subject.
  * Basically, this is an IMC, MCM and GEB calculator.

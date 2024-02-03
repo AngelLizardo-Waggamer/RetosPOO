@@ -1,3 +1,11 @@
+/**
+ * * Author: @angl.liz
+ * * Github: @AngelLizardo-Waggamer
+ * 
+ * * In this challenge the main objective is to build a Dictionary with a certain amount of words and meanings, also to 
+ * * create a number "game" in which we specify the length of a number array, fill it up and calculate a bunch of things :p
+ */
+
 package Retos;
 
 import java.io.IOException;
@@ -79,7 +87,7 @@ public class RetoTres {
         }
 
         /**
-         *  listarPalabras() func. prints all the words registered in the Dictionary.
+         *  Prints all the words registered in the Dictionary.
          */
         private void listarPalabras(){
             System.out.println("Palabras disponibles: ");
@@ -89,7 +97,7 @@ public class RetoTres {
             System.out.println("-------------------");
         }
         /**
-         *  seleccionarOpcion() func. shows the menu and takes the user input for the option.
+         *  Shows the menu and takes the user input for the option.
          * @return option selected by the user as a {@code char}
          */
         private char seleccionarOpcion(){
@@ -97,7 +105,7 @@ public class RetoTres {
             return entrada.next().charAt(0); // * Return the first character in the input
         }
         /**
-         *  buscar() func. looks for a user-specified word in the dictionary and prints its meaning. If the word is not in the dictionary, it will tell the user
+         *  Looks for a user-specified word in the dictionary and prints its meaning. If the word is not in the dictionary, it will tell the user
          *  that the word is not registered.
          * @param palabra word to look.
          * @return a {@code String} response depending whether the word was found or not.
@@ -117,7 +125,7 @@ public class RetoTres {
             }
         }
         /**
-         *  imprimirDetalles() func. prints: 
+         *  Prints: 
          *  <ol> 
          *   <li>The number of available words in the dictionary</li>
          *   <li>List of words with a character count of the word and also from the meaning.</li>
@@ -149,7 +157,7 @@ public class RetoTres {
             System.out.println("Suma total del array: " + total);
         }
         /**
-         * This function fills the number array. It first asks for the number of rows and columns, then it initializes the number array in the specified size.
+         * Fills the number array. It first asks for the number of rows and columns, then it initializes the number array in the specified size.
          * The arrays used to store the sum of odd and even numbers are initialized with the size of the bigger number: rows or columns.
          * 
          */

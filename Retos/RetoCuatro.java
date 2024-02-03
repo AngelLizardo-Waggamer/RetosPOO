@@ -1,3 +1,10 @@
+/**
+ * * Author: @angl.liz
+ * * Github: @AngelLizardo-Waggamer
+ * 
+ * * The main objective of this challenge is to create a program to register the passengers and the sells of a tourism agency.
+ */
+
 package Retos;
 
 import java.util.ArrayList;
@@ -16,13 +23,6 @@ public class RetoCuatro {
         private float totalVentas;
         private ArrayList<String[]> pasajeros = new ArrayList<String[]>();
         private ArrayList<String[]> ventas = new ArrayList<String[]>();
-        
-        /**
-         * Estructura del array Ventas
-         * { {pasPrin, ad1, ad2, ..., adx}{importe},
-         *   {pasPrin, ad1, ad2, ..., adx}{importe} 
-         * }
-         */
 
         public ProgramaVentaBoletos(){
             this.totalVentas = 0.0f;

@@ -1,6 +1,6 @@
 /*
  * Author: @angl.liz
- * Github: AngelHernandez-Waggamer
+ * Github: @AngelLizardo-Waggamer
  * 
  * This Challenge has inside of it two programs: 
  * 1. A mean calculator for school grades.
@@ -122,8 +122,8 @@ public class RetoDos {
             }
         }
         /**
-         * * iniciarSesion() function validates if the user is authorized to use the program by asking an administrator user and password. 
-         * * The program will not start if the given username and password are the correct ones.
+         * * Validates if the user is authorized to use the program by asking an administrator user and password. 
+         * * The program will not start if the given username and password are not the correct ones.
          *  
          */
         private void iniciarSesion(){
@@ -143,7 +143,7 @@ public class RetoDos {
             }
         }
         /**
-         * * obtenerOpcion() function prints a menu with the possible options and asks the user for an Integer input which is later returned.
+         * Prints a menu with the possible options and asks the user for an Integer input which is later returned.
          * @return option chosen by the user as an Integer
          */
         private int obtenerOpcion(){
@@ -154,7 +154,7 @@ public class RetoDos {
             return res;
         }
         /**
-         * * compra() function calculates the amount of money spent in buying 'n' number of boxes at 'm' cost.
+         * Calculates the amount of money spent in buying 'n' number of boxes at 'm' cost.
          * @param cantCajas the quantity of boxes that you are going to buy
          * @param costCajas the cost of each box
          * @return total cost of the buying as a float
@@ -168,7 +168,7 @@ public class RetoDos {
             return res;
         }
         /**
-         * * venta() function calculates the amount of money earned by selling 'n' number of boxes at 'm' cost
+         * * Calculates the amount of money earned by selling 'n' number of boxes at 'm' cost
          * @param cantCajas the quantity of boxes that you are going to buy
          * @param precioCajas the price of each box
          * @return total earned money of the selling as a float
@@ -182,7 +182,7 @@ public class RetoDos {
             return res;
         }
         /**
-         * * imprimirBalance() function prints in a correct way negative quantities of money with the '$' sign.
+         * * Prints in a correct way negative quantities of money with the '$' sign.
          * @param cantidad the quantity of money that you want to print
          * @return a String that can or cannot have a negative sign at the start depending of the given params.
          */
