@@ -75,19 +75,21 @@ public class RetoCuatro {
             System.out.println("Numero de pasajeros adicionales: ");
             pasajerosAdicionales = entrada.nextInt();
             if(pasajerosAdicionales != 0){
-                String[] datosVenta = new String[pasajerosAdicionales + 2];
+                String[] datosVenta = new String[pasajerosAdicionales + 3];
                 datosVenta[0] = Float.toString(1250.5f * (pasajerosAdicionales + 1));
-                datosVenta[1] = comprador;
-                for(int p = 2; p <= (pasajerosAdicionales + 2); p++){
+                datosVenta[1] = Integer.toString(pasajerosAdicionales);
+                datosVenta[2] = comprador;
+                for(int p = 3; p <= datosVenta.length; p++){
                     System.out.println("Nombre del pasajero adicional #" + p + ": ");
                     datosVenta[p] = entrada.next();
                 }
                 ventas.add(datosVenta);
                 System.out.println("Venta numero " + ventas.size() + " registrada exitosamente.");
             }else{
-                String[] datosVenta = new String[2];
+                String[] datosVenta = new String[3];
                 datosVenta[0] = Float.toString(1250.5f);
-                datosVenta[1] = comprador;
+                datosVenta[1] = "0";
+                datosVenta[2] = comprador;
                 ventas.add(datosVenta);
                 System.out.println("Venta numero " + ventas.size() + " registrada exitosamente.");
             }
@@ -99,9 +101,12 @@ public class RetoCuatro {
             for(int i = 0; i<ventas.size(); i++){
                 String[] temp = ventas.get(i);
                 System.out.println("* Venta numero #" + i + ": ");
-                System.out.println("    Pasajero: " + temp[1]);
+                System.out.println("    Pasajero: " + temp[2]);
                 System.out.println("    Importe: " + "$" + temp[0]);
                 System.out.println("    Pasajeros adicionales: ");
+                for(int pa = 3; pa <= Integer.parseInt(temp[1]); pa++){
+                    System.out.println("        * " + temp[pa]);
+                }
             }
         }
     }
