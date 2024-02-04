@@ -5,7 +5,6 @@
  * This Challenge has inside of it two programs: 
  * 1. A mean calculator for school grades.
  * 2. A management system for a store that buys/sells boxes.
- * By the time I am commenting the code (01/29/2024) there are several points that break the program in the second option, but I am looking forward to fix them ;)
  */
 
 package Retos;

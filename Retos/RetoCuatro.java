@@ -7,12 +7,13 @@
 
 package Retos;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Scanner;
 
 public class RetoCuatro {
     private static Scanner entrada = new Scanner(System.in);
-    public static void exec(){
+    public static void exec() throws IOException{
         RetoCuatro r = new RetoCuatro();
         ProgramaVentaBoletos programa = r.new ProgramaVentaBoletos();
         programa.start();
