@@ -20,16 +20,77 @@ public class RetoCuatro {
     }
 
     private class ProgramaVentaBoletos{
-        private float totalVentas;
-        private ArrayList<String[]> pasajeros = new ArrayList<String[]>();
+        private float totalIngresoVentas;
         private ArrayList<String[]> ventas = new ArrayList<String[]>();
 
+        /**
+         * Class constructor
+         * 
+         */
         public ProgramaVentaBoletos(){
-            this.totalVentas = 0.0f;
+            this.totalIngresoVentas = 0.0f;
         }
-
+        /**
+         * Method to start the program
+         */
         public void start(){
-
+            System.out.println("-------------------------");
+            while (true) {
+                switch(seleccionarOpcion()){
+                    case 'A'->{
+                        realizarVenta();
+                    }
+                    case 'B'->{
+                        imprimirReporte();
+                    }
+                    case 'S'->{
+                        System.out.println("---GRACIAS POR USAR EL PROGRAMA---");
+                        break;
+                    }
+                    default->{
+                        System.out.println("Ingresa una opcion valida.");
+                    }
+                }
+            }
+        }
+        /**
+         * Displays the program menu and takes user's input
+         * @return {@code char} with the selected option. Possible values: {@code ['A', 'B', 'S']}
+         */
+        private char seleccionarOpcion(){
+            char op;
+            System.out.println("Ingrese una opcion:\nA. Realizar venta de boleto\nB. Mostrar datos de la lista de ventas\nS. Finalizar Programa");
+            op = entrada.next().charAt(0);
+            return op;
+        }
+        /**
+         * Takes from the user the buyer's name, the ticket quantity and the name of the extra passengers.
+         * Then, it prints a ticket with the collected data and the total price.
+         */
+        private void realizarVenta(){
+            String comprador;
+            int pasajerosAdicionales;
+            System.out.println("Ingrese el nombre del pasajero: ");
+            comprador = entrada.next();
+            System.out.println("Numero de pasajeros adicionales: ");
+            pasajerosAdicionales = entrada.nextInt();
+            if(pasajerosAdicionales != 0){
+                
+            }else{
+                String[] datosVenta = new String[2];
+                datosVenta[0] = Float.toString(1250.5f);
+                datosVenta[1] = comprador;
+                ventas.add(datosVenta);
+                System.out.println("Venta numero " + ventas.size() + " registrada exitosamente.");
+            }
+        }
+        /**
+         * Prints a list of all the sold tickets, the total of money earned by them and a total passenger count.
+         */
+        private void imprimirReporte(){
+            for(int i = 0; i<ventas.size(); i++){
+                System.out.println("Venta numero #" + i);
+            }
         }
     }
 }
