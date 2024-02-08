@@ -177,8 +177,7 @@ public class RetoTres {
             for(int fila = 0; fila < this.filas; fila++){{ // * Store the values of the array with two for cycles.
                 for(int col = 0; col < this.columnas; col++){
                     int num;
-                    System.out.println("Valor en la fila " + fila + " y columna " + col + ":");
-                    num = Integer.parseInt(entrada.next());
+                    num = (int)(Math.random() * 100);
                     this.arrayNumeros[fila][col] = num;
                     this.total += num;
                     if(num%2 == 0){
