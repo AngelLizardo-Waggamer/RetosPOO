@@ -160,8 +160,8 @@ public class EvidenceOne {
             System.out.println("Nombre Químico: " + nombreQuimico);
             System.out.println("Nombre Genérico: " + nombreGenerico);
             System.out.println("Nombre Registrado: " + nombreRegistrado);
-            System.out.println("Precio al público: " + precioPublico);
-            System.out.println("Precio de venta: " + precioVenta);
+            System.out.println("Precio al público: $" + precioPublico);
+            System.out.println("Precio de venta: $" + precioVenta);
             pres = switch(presentacion){
                 case Presentaciones.SOLIDO->"Sólido";
                 case Presentaciones.LIQUIDO->"Líquido";
