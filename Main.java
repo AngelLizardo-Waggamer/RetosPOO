@@ -13,24 +13,27 @@ import Retos.*;
 public class Main{
     public static void main(String[] args) throws IOException{
         Scanner entrada = new Scanner(System.in);
-        int nTarea;
-            System.out.println("Ingresa el numero de reto que quieres ejecutar: ");
-                nTarea = entrada.nextInt();
+        String nTarea;
+            System.out.println("Nomenclatura: r + numero de reto o e + numero de evidencia");
+                nTarea = entrada.next();
                 switch(nTarea){
-                    case 1->{
+                    case "r1"->{
                         RetoUno.exec();
                     }
-                    case 2->{
+                    case "r2"->{
                         RetoDos.exec();
                     }
-                    case 3->{
+                    case "r3"->{
                         RetoTres.exec();
                     }
-                    case 4->{
+                    case "r4"->{
                         RetoCuatro.exec();
                     }
+                    case "e1"->{
+                        EvidenceOne.exec();
+                    }
                     default->{
-                        System.out.println("Intenta un numero valido");
+                        System.out.println("Intenta una opcion valida");
                     }
                 }
         entrada.close();

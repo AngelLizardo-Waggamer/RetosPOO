@@ -3,6 +3,8 @@ package Retos;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 
 /**
@@ -95,8 +97,12 @@ public class EvidenceOne {
          * Shows the medicament list with the details of each one.
          */
         private void mostrarLista(){
+            DateTimeFormatter dtf = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm");
+            System.out.println("Reporte generado en " + dtf.format(LocalDateTime.now()));
+            System.out.println("Medicamentos registrados: " + listaMedicamentos.size());
             for(int i = 0; i < listaMedicamentos.size(); i++){
                 System.out.println("--------- MEDICAMENTO " + (i + 1) + " ---------");
+                System.out.println("Registrado por: Admin");
                 listaMedicamentos.get(i).datos();
             }
         }
