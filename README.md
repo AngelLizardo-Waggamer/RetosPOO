@@ -9,3 +9,6 @@ Si no, en la misma página te da la opción de bajar los archivos que quieras oc
 Puedes revisar mis archivos donde anoto cosas que me sirven para poder hacer mis trabajos mejor:
 * [Cheatsheet Java](Cheatsheet.md)
 * [Comandos de Git](Git_commands.md)
+
+## Personas a las que no insulté
+* [Estela](https://github.com/EstelaGuzman) Esq bro no era para ti 😭😭😭
