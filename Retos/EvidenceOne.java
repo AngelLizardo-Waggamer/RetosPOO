@@ -3,7 +3,7 @@ package Retos;
 /**
  * RetoCinco
  */
-public class RetoCinco { // Clase
+public class EvidenceOne { // Clase
     public static void exec() {
         // ...
     }
