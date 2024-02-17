@@ -1,20 +1,36 @@
 #TODO: 
-Una empresa de autobuses turísticos requiere el desarrollo de un programa para la venta de boletos de una de sus unidades de transporte, dicho programa realizará el registro y despliegue de pasajeros. El costo actual de los boletos es de $1250.50 MXN y deberás hacer uso de estructuras o colecciones de datos de tipo ArrayList de Java. 
+Una empresa requiere de un programa para generar la nómina básica de sus empleados. Dicho programa será alimentado por el área de Recursos Humanos. 
 
-A continuación, se enlistan los requerimientos que te han planteado: 
+Las especificaciones planteadas son las siguientes: 
 
-El programa deberá mostrar un menú con las siguientes opciones:  
-A. Realizar venta de boleto 
-B. Mostrar datos de la lista de ventas 
-S. Finalizar programa 
-El usuario indicará la opción a ejecutar hasta elegir la opción Finalizar programa.  
-La opción A tiene los siguientes requerimientos: 
-Se le solicitan al usuario los datos del comprador: 
-Nombre completo del comprador 
-Cantidad de boletos 
-Se deberá capturar el nombre completo de cada pasajero adicional (excluyendo al comprador); estos datos serán almacenados en un vector y asociados al registro de venta del comprador. 
-Una vez que se hayan capturado los datos, se deberá desplegar un ticket de venta donde se incluya el importe de la operación. 
-La opción B deberá realizar la siguiente operación: 
-Mostrar la lista de pasajeros registrados. 
-Mostrar el importe total de la lista de boletos. 
-Mostrar la cantidad total de pasajeros registrados. 
+Se requiere que el empleado de RH indique la cantidad de empleados a capturar en el programa, una vez se indique, se deberá registrar uno a uno los datos de los empleados. 
+Los datos de cada empleado son:  
+Nombre completo 
+Horas trabajadas 
+Horas extras trabajadas  
+Teléfono 
+Fecha de nacimiento (para calcular su edad) 
+Los empleados tienen asignada una categoría, por lo que se considera como un atributo de cada empleado, dicha categoría se indica durante la captura de los datos de los empleados. 
+Las categorías existentes son: empleado ventas, administrador y gerente, los datos de cada categoría son los siguientes:  
+Nombre de la categoría 
+Clave de la categoría 
+Sueldo base de la categoría 
+Pago por hora extra 
+Los datos económicos proporcionados para las categorías por el área de RH son: 
+El sueldo base de las categorías:  
+Empleado ventas: $100.00 por hora 
+Administrador: $180.00 por hora 
+Gerente: $250.00 por hora 
+El pago por hora extra de las categorías:  
+Empleado ventas: $50.00 por hora extra 
+Administrador: $100.00 por hora extra 
+Gerente: $150.00 por hora extra 
+Se requiere que, al finalizar la captura de empleados, se genere el siguiente reporte de nómina: 
+Cálculo del total de la nómina de la empresa. 
+Cálculo del total a pagar por sueldo normal. 
+Cálculo del total a pagar por horas extras. 
+Cálculo del total de horas laboradas (Hora trabajo + hora extra) en la empresa.   
+Total de personas que tienen horas extras. 
+Total de personas que no tienen horas extras. 
+
+**El sistema se debe de realizar por lo menos implementando 3 clases.**

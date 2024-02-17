@@ -1,3 +1,9 @@
+/**
+ * * Author: @angl.liz
+ * * Github: @AngelLizardo-Waggamer
+ * 
+ * * In this evidence, the main objective is to create a medicament list based in user inputs. There are two subclasses apart from EvidenceOne: Programa and Medicamento.
+ */
 package Retos;
 
 import java.io.BufferedReader;
