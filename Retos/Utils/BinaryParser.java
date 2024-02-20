@@ -29,7 +29,6 @@ public class BinaryParser {
             return Convertidor.parseBinary(value);
         }
     }
-
     /**
      * Handles conversions from numbers to binary values.
      */
@@ -40,18 +39,7 @@ public class BinaryParser {
          * @return {@code String} binary value of the number.
          */
         private static String parseBinary(int num){
-            StringBuilder str = new StringBuilder();
-            String result = "";
-            int tempInd, tempN = num;
-            for(int n = 1; n <= 32; n++){
-                result += tempN%2;
-                tempN /= 2;
-            }
-            tempInd = result.lastIndexOf("1");
-            result = result.substring(0, tempInd + 1);
-            str.append(result);
-            str.reverse();
-            return str.substring(0);
+            return Integer.toBinaryString(num);
         }
         /**
          * Converts the float part of a number to binary float value.
@@ -76,9 +64,22 @@ public class BinaryParser {
             }while(tempN != 1.0f);
             return result;
         }
-        private static String parseBinary(String txt){
-            
-            return "";
+        /**
+         * Converts the given {@code String} to binary. 
+         * @param txt {@code String} to convert
+         * @return {@code String} with the binary of every character with spaces in between the numbers.
+         */
+        private static String parseBinary(String txt){ // 
+            char[] characters = new char[]{};
+            characters = txt.toCharArray();
+            String res = "";
+            for(int l = 0; l < characters.length; l++){
+                int temp;
+                temp = characters[l];
+                res += Integer.toBinaryString(temp) + " ";
+            }
+            res.trim();
+            return res;
         }
     }
 }
