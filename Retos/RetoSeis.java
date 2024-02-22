@@ -16,6 +16,12 @@ public class RetoSeis {
      * Main function to execute RetoSeis code
      */
     public static void exec(){
-        
+        programa.start();
+    }
+
+    private class programa{
+        private static void start(){
+            // ...
+        }
     }
 }
