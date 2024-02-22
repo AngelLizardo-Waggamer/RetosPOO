@@ -1,12 +1,15 @@
 package Retos.Utils;
-/**
- * Clase para manejar la entrada de datos del usuario.
- */
 
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
+/**
+ * Maneja la entrada de datos del usuario de manera particular
+ * @author AngelLizardo-Waggamer
+ * @see NumericStringEvaluator
+ * 
+ */
 public class InputHandler {
     private static BufferedReader entrada = new BufferedReader(new InputStreamReader(System.in));
 
