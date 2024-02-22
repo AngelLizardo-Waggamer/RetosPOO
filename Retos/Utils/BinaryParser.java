@@ -11,8 +11,7 @@ public class BinaryParser {
      * @return {@code String} with the Binary value requested.
      */
     public static String toBinary(String value){
-        NumericStringEvaluator evaluator = new NumericStringEvaluator();
-        if(evaluator.isANumber(value)){
+        if(NumericStringEvaluator.isANumber(value)){
             if(value.contains(".")){
                 int indexPunto, intPart;
                 float floatPart;

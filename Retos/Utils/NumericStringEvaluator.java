@@ -1,7 +1,7 @@
 package Retos.Utils;
 
 public class NumericStringEvaluator {
-    public boolean isANumber(String str){
+    public static boolean isANumber(String str){
         if(str == null){
             return false;
         }
