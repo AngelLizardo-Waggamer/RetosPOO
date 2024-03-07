@@ -17,4 +17,10 @@ public class RetoSeis {
     public static void exec(){
         
     }
+
+    private class programa{
+        public void start(){
+            
+        }
+    }
 }
