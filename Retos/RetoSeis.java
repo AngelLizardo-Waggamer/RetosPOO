@@ -7,7 +7,10 @@
  */
 package Retos;
 
+import java.io.IOException;
 import java.time.format.DateTimeFormatter;
+
+import Retos.Utils.InputHandler;
 
 /**
  * Reto seis
@@ -16,20 +19,22 @@ public class RetoSeis {
     /**
      * Main function to execute RetoSeis code
      */
-    public static void exec(){
-        programa.start();
+    public static void exec() throws IOException{
+        RetoSeis c = new RetoSeis();
+        programa prg = c.new programa();
+        prg.start();
     }
     @SuppressWarnings("unused")
     /**
      * Clase donde todo el programa funciona
      */
     private class programa{
-        private static DateTimeFormatter dtf = DateTimeFormatter.ofPattern("dd/mm/aa");
+        private static DateTimeFormatter dtf = DateTimeFormatter.ofPattern("dd/mm/aaaa");
         private float horasLaboradas;
         private int totalEmpleados, personasConHorasExtras;
         private empleado[] empleados;
 
-        private static void start(){
+        private void start() throws IOException{
             // Registar Datos de Categorías
             categoriaEmpleado Gerente = new categoriaEmpleado("GE24", "Gerente", 250.0d, 150.0d);
             categoriaEmpleado Ventas = new categoriaEmpleado("VE24", "Empleado de ventas", 100.0d, 50.0d);
@@ -42,16 +47,30 @@ public class RetoSeis {
         /**
          * Pregunta el numero de empleados y dimensiona el array empleados
          */
-        private static void ingresarEmpleados(){
-
+        private void ingresarEmpleados() throws IOException{
+            totalEmpleados = Integer.parseInt(InputHandler.input(InputHandler.Types.ENTERO_NO_NEGATIVO, "Ingrese el numero de empleados a registrar: "));
+            for(int nE = 0; nE < totalEmpleados; nE++){
+                String nmb, tlf, clC;
+                float hT, hET;
+                DateTimeFormatter dt = DateTimeFormatter.ofPattern("dd/mm/aaaa");
+            }
         }
         /**
          * Clase para generar los empleados
          */
         private static class empleado{
-            private String nombre, telefono;
+            private String nombre, telefono, claveCategoria;
             private float horasTrabajadas, horasExtraTrabajadas;
             private DateTimeFormatter fechaNacimiento;
+
+            public empleado(String claveCategoria, String nombre, String telefono, float horasTrabajadas, float horasExtraTrabajadas, DateTimeFormatter fechaNacimiento){
+                this.nombre = nombre;
+                this.telefono = telefono;
+                this.claveCategoria = claveCategoria;
+                this.horasTrabajadas = horasTrabajadas;
+                this.horasExtraTrabajadas = horasExtraTrabajadas;
+                this.fechaNacimiento = fechaNacimiento;
+            }
         }
         /**
          * Clase para la categoria del empleado
@@ -67,12 +86,6 @@ public class RetoSeis {
                 this.sueldoBase = sueldoBase;
                 this.bonoHorasExtra = bonoHorasExtra;
             }
-        }
-    }
-
-    private class programa{
-        public void start(){
-            
         }
     }
 }
