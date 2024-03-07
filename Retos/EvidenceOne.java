@@ -35,12 +35,14 @@ public class EvidenceOne {
          */
         public void start() throws IOException{
             iniciarSesion("admin", "admin");
+            boolean tmp;
             do{
                 nuevoRegistro();
-                if(!menu()){
+                tmp = menu();
+                if(!tmp){
                     break;
                 }
-            }while(menu());
+            }while(tmp);
             mostrarLista();
         }
         /**
