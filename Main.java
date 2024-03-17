@@ -35,6 +35,9 @@ public class Main{
                     case "e1"->{
                         EvidenceOne.exec();
                     }
+                    case "ar6"->{
+                        AparenteRetoSeis.exec();
+                    }
                     default->{
                         System.out.println("Intenta una opcion valida");
                     }

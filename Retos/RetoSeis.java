@@ -7,7 +7,10 @@
  */
 package Retos;
 
+import java.io.IOException;
 import java.time.format.DateTimeFormatter;
+
+import Retos.Utils.InputHandler;
 
 /**
  * Reto seis
@@ -16,7 +19,7 @@ public class RetoSeis {
     /**
      * Main function to execute RetoSeis code
      */
-    public static void exec(){
+    public static void exec() throws IOException{
         programa.start();
     }
     @SuppressWarnings("unused")
@@ -29,7 +32,7 @@ public class RetoSeis {
         private int totalEmpleados, personasConHorasExtras;
         private empleado[] empleados;
 
-        private static void start(){
+        private static void start() throws IOException{
             // Registar Datos de Categorías
             categoriaEmpleado Gerente = new categoriaEmpleado("GE24", "Gerente", 250.0d, 150.0d);
             categoriaEmpleado Ventas = new categoriaEmpleado("VE24", "Empleado de ventas", 100.0d, 50.0d);
@@ -41,9 +44,10 @@ public class RetoSeis {
 
         /**
          * Pregunta el numero de empleados y dimensiona el array empleados
+         * @throws IOException because an user input is asked
          */
-        private static void ingresarEmpleados(){
-
+        private static void ingresarEmpleados() throws IOException{
+            int numEmpleados = Integer.parseInt(InputHandler.input(InputHandler.Types.ENTERO_NO_NEGATIVO, "Ingrese el numero de empleados a registrar: "));
         }
         /**
          * Clase para generar los empleados
