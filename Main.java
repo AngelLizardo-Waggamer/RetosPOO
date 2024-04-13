@@ -38,6 +38,9 @@ public class Main{
                     case "ar6"->{
                         AparenteRetoSeis.exec();
                     }
+                    case "r8"->{
+                        RetoOcho.exec();
+                    }
                     default->{
                         System.out.println("Intenta una opcion valida");
                     }
