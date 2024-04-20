@@ -8,7 +8,7 @@
 package Retos;
 
 import java.io.IOException;
-import java.time.format.DateTimeFormatter;
+import java.util.ArrayList;
 
 import Retos.Utils.InputHandler;
 
@@ -22,15 +22,19 @@ public class RetoSeis {
     public static void exec() throws IOException{
         programa.start();
     }
-    @SuppressWarnings("unused")
     /**
      * Clase donde todo el programa funciona
      */
     private class programa{
-        private static DateTimeFormatter dtf = DateTimeFormatter.ofPattern("dd/mm/aa");
+        /**
+         * Total de horas laboradas en general.
+         */
         private float horasLaboradas;
-        private int totalEmpleados, personasConHorasExtras;
-        private empleado[] empleados;
+        private static int totalEmpleados, personasConHorasExtras;
+        /**
+         * Lista de empleados
+         */
+        private static ArrayList<empleado> empleados = new ArrayList<empleado>();
 
         private static void start() throws IOException{
             // Registar Datos de Categorías
@@ -38,8 +42,10 @@ public class RetoSeis {
             categoriaEmpleado Ventas = new categoriaEmpleado("VE24", "Empleado de ventas", 100.0d, 50.0d);
             categoriaEmpleado Administrador = new categoriaEmpleado("AM24", "Administrador", 180.0d, 100.0d);
 
-            // Preguntar el numero de empleados y registrarlos en el array empleados[]
+            // Preguntar el numero de empleados y registrarlos en el ArrayList empleados[]
             ingresarEmpleados();
+
+            // Calcular los datos de la nómina
         }
 
         /**
@@ -47,7 +53,16 @@ public class RetoSeis {
          * @throws IOException because an user input is asked
          */
         private static void ingresarEmpleados() throws IOException{
-            int numEmpleados = Integer.parseInt(InputHandler.input(InputHandler.Types.ENTERO_NO_NEGATIVO, "Ingrese el numero de empleados a registrar: "));
+            totalEmpleados = Integer.parseInt(InputHandler.input(InputHandler.Types.ENTERO_NO_NEGATIVO, "Ingrese el numero de empleados a registrar: "));
+
+            for(int i = 0; i < totalEmpleados; i++){
+                String nombre = InputHandler.input(InputHandler.Types.STRING_NO_VACIO, "Ingresa el nombre del empleado: ");
+                String telefono = InputHandler.input(InputHandler.Types.STRING_NO_VACIO, "Ingresa el telefono del empleado: ");
+                float horasTrabajadas = Float.parseFloat(InputHandler.input(InputHandler.Types.FLOTANTE_NO_NEGATIVO, "Ingresa las horas trabajadas por el empleado: "));
+                float horasExtraTrabajadas = Float.parseFloat(InputHandler.input(InputHandler.Types.FLOTANTE_NO_NEGATIVO, "Ingresa las horas extra trabajadas por el empleado: "));
+                empleado em = new empleado(nombre, telefono, horasTrabajadas, horasExtraTrabajadas);
+                empleados.add(em);
+            }
         }
         /**
          * Clase para generar los empleados
@@ -55,7 +70,25 @@ public class RetoSeis {
         private static class empleado{
             private String nombre, telefono;
             private float horasTrabajadas, horasExtraTrabajadas;
-            private DateTimeFormatter fechaNacimiento;
+
+            public empleado(String nombre, String telefono, float horasTrabajadas, float horasExtraTrabajadas){
+                this.nombre = nombre;
+                this.telefono = telefono;
+                this.horasExtraTrabajadas = horasExtraTrabajadas;
+                this.horasTrabajadas = horasTrabajadas;
+            }
+            public String getNombre(){
+                return nombre;
+            }
+            public String getTelefono(){
+                return telefono;
+            }
+            public float getHorasTrabajadas(){
+                return horasTrabajadas;
+            }
+            public float getHorasExtraTrabajadas(){
+                return horasExtraTrabajadas;
+            }
         }
         /**
          * Clase para la categoria del empleado
@@ -70,6 +103,18 @@ public class RetoSeis {
                 this.nombreCategoria = nombre;
                 this.sueldoBase = sueldoBase;
                 this.bonoHorasExtra = bonoHorasExtra;
+            }
+            public String getClave(){
+                return claveCategoria;
+            }
+            public String getNombre(){
+                return nombreCategoria;
+            }
+            public double getSueldoBase(){
+                return sueldoBase;
+            }
+            public double getBonoHorasExtra(){
+                return bonoHorasExtra;
             }
         }
     }
