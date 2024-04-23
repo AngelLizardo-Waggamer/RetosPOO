@@ -32,6 +32,9 @@ public class Main{
                     case "r5"->{
                         RetoCinco.exec();
                     }
+                    case "r6"->{
+                        RetoSeis.exec();
+                    }
                     case "e1"->{
                         EvidenceOne.exec();
                     }

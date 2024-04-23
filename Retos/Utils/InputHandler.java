@@ -87,6 +87,7 @@ public class InputHandler {
                         System.out.println("La entrada no puede estar vacia, intente de nuevo: ");
                         input = entrada.readLine();
                     }
+                    return input;
                 }
                 default->{
                     return "Como chingados le hiciste para llegar aqui.";
@@ -96,7 +97,6 @@ public class InputHandler {
             System.err.println(e.getMessage());
             return "e.";
         }
-        return "No mame que verga con esto nojoda mano que chingados como putas le hiciste pa llegar aqui recontramalparido puto";
     }
 
     private static boolean hasFloatPart(String input){
