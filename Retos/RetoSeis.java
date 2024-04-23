@@ -26,6 +26,7 @@ public class RetoSeis {
     /**
      * Clase donde todo el programa funciona
      */
+    @SuppressWarnings("unused")
     private class programa{
         /**
          * Total de horas laboradas en general.
@@ -80,7 +81,6 @@ public class RetoSeis {
                         yield Ventas;
                     }
                 };
-                System.out.println(categoria.getClave());
                 empleado em = new empleado(nombre, telefono, horasTrabajadas, horasExtraTrabajadas, categoria);
                 empleados.add(em);
             }
