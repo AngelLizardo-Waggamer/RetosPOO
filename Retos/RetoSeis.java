@@ -26,7 +26,6 @@ public class RetoSeis {
     /**
      * Clase donde todo el programa funciona
      */
-    @SuppressWarnings("unused")
     private class programa{
         /**
          * Total de horas laboradas en general.
