@@ -20,6 +20,9 @@ public class InputHandler {
         STRING_NO_VACIO
     }
 
+    public static enum RangedTypes{
+        ENTERO
+    }
     /**
      * Realiza la validacion especificada al input {@code String} que de el usuario.
      * @param input_type Constante de la enum {@code Types} que especifique el tipo de validacion que se debe de realizar. Tipos disponibles:
@@ -91,6 +94,31 @@ public class InputHandler {
                 }
                 default->{
                     return "Como chingados le hiciste para llegar aqui.";
+                }
+            }
+        } catch (Exception e) {
+            System.err.println(e.getMessage());
+            return "e.";
+        }
+    }
+
+    public static String rangedInput(RangedTypes tipo, double min, double max, String prompt) throws IOException{
+        String input;
+        input = InputHandler.input(Types.NUMERO_EN_GENERAL, prompt);
+        try {
+            switch(tipo){
+                case ENTERO->{
+                    while(true){
+                        if(Integer.parseInt(input) > (int)max || Integer.parseInt(input) < (int)min){
+                            System.out.println("Ingrese un numero dentro del rango [" + (int)min + ", " + (int)max + "]");
+                            input = InputHandler.input(Types.NUMERO_EN_GENERAL, null);
+                        }else{
+                            return input;
+                        }
+                    }
+                }
+                default->{
+                    return "Q mierda hiciste para llegar aqui";
                 }
             }
         } catch (Exception e) {
