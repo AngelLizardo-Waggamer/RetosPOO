@@ -75,6 +75,7 @@ public class Cafetera {
                     System.out.println("La cafetera estara rebosada si se agrega esa cantidad.");
                 }else{
                     CantidadDeCafeActual+=input;
+                    System.out.println("Se han agregado correctamente " + input  + "g de cafe.");
                 }
             }
             case 2->{ // Agua
@@ -83,6 +84,7 @@ public class Cafetera {
                     System.out.println("La cafetera estara rebosada si se agrega esa cantidad.");
                 }else{
                     CantidadDeAguaActual+= input;
+                    System.out.println("Se han agregado correctamente " + input  + "ml de agua.");
                 }
             } 
             case 3->{ // Azucar
@@ -91,6 +93,7 @@ public class Cafetera {
                     System.out.println("La cafetera estara rebosada si se agrega esa cantidad.");
                 }else{
                     CantidadDeAzucarActual+= input;
+                    System.out.println("Se han agregado correctamente " + input  + "g de Azucar.");
                 }
             }
             default->{}
