@@ -13,6 +13,7 @@ public class GiraLaCarta extends Juego{
 
     public GiraLaCarta(String nombre, String correo, String telefono){
         super(nombre, correo, telefono);
+        tipoJuego = "Gira la carta";
     }
 
     @Override

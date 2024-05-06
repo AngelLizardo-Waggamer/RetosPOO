@@ -13,6 +13,7 @@ public class AdivinaNumero extends Juego{
 
     public AdivinaNumero(String nombre, String correo, String telefono){
         super(nombre, correo, telefono);
+        tipoJuego = "Adivina el numero";
     }
 
     @Override

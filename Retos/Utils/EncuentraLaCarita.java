@@ -13,6 +13,7 @@ public class EncuentraLaCarita extends Juego{
 
     public EncuentraLaCarita(String nombre, String correo, String telefono){
         super(nombre, correo, telefono);
+        tipoJuego = "Encuentra la carita";
     }
 
     @Override
