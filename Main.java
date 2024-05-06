@@ -47,6 +47,9 @@ public class Main{
                     case "r8"->{
                         RetoOcho.exec();
                     }
+                    case "r11"->{
+                        RetoOnce.exec();
+                    }
                     default->{
                         System.out.println("Intenta una opcion valida");
                     }

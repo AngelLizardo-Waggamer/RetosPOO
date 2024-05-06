@@ -110,8 +110,7 @@ public class InputHandler {
                 case ENTERO->{
                     while(true){
                         if(Integer.parseInt(input) > (int)max || Integer.parseInt(input) < (int)min){
-                            System.out.println("Ingrese un numero dentro del rango [" + (int)min + ", " + (int)max + "]");
-                            input = InputHandler.input(Types.NUMERO_EN_GENERAL, null);
+                            input = InputHandler.input(Types.NUMERO_EN_GENERAL, "Ingrese un numero dentro del rango [" + (int)min + ", " + (int)max + "]");
                         }else{
                             return input;
                         }
