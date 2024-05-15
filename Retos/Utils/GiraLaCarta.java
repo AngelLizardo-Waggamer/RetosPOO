@@ -19,6 +19,7 @@ public class GiraLaCarta extends Juego{
     @Override
     public void iniciarJuego() throws IOException{
         int res = (int)(Math.random() * 5);
+        if(res == 0){ res+=1; }
         int inp;
         System.out.println("***** Gira la carta *****");
         System.out.println("Cartas: X X X X X");

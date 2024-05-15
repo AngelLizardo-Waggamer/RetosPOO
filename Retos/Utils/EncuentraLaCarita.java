@@ -20,8 +20,8 @@ public class EncuentraLaCarita extends Juego{
     public void iniciarJuego() throws IOException{
         int posRdeX, posRdeY;
         int inpX, inpY;
-        posRdeX = (int)(Math.random()*3) - 1;
-        posRdeY = (int)(Math.random()*3) - 1;
+        posRdeX = (int)(Math.random()*2);
+        posRdeY = (int)(Math.random()*2);
         System.out.println("***** Encuentra la Carita *****");
         imprimirtabla();
         inpX = Integer.parseInt(InputHandler.rangedInput(RangedTypes.ENTERO, 0, 2, "Ingrese la posicion horizontal de su intento: "));
