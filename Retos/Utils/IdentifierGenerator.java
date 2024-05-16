@@ -10,7 +10,8 @@ public class IdentifierGenerator {
         String[] iniciales;
         iniciales = nombre.split(" ");
         for(int i = 0; i < iniciales.length; i++){
-            res += iniciales[i].toUpperCase();
+            String temp = String.valueOf(iniciales[i].charAt(0)).toUpperCase();
+            res += temp;
         }
         return res;
     }

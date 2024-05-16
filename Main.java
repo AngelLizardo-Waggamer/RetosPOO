@@ -50,6 +50,9 @@ public class Main{
                     case "r11"->{
                         RetoOnce.exec();
                     }
+                    case "EF"->{
+                        EvidenciaFinal.exec();
+                    }
                     default->{
                         System.out.println("Intenta una opcion valida");
                     }

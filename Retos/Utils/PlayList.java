@@ -17,6 +17,12 @@ public class PlayList {
         this.numeroCanciones = numeroCanciones;
     }
 
+    public PlayList(String nombre, ArrayList<Cancion> canciones){
+        this.nombre = nombre;
+        this.identificador = IdentifierGenerator.generarIdentificador(nombre);
+        this.canciones = canciones;
+    }
+
     public String[] getDetalles(){
         String[] detalles = new String[3];
         detalles[0] = nombre;
@@ -42,7 +48,7 @@ public class PlayList {
             }
             opcGen = Integer.parseInt(InputHandler.rangedInput(RangedTypes.ENTERO, 1, generos.size() + 1, (generos.size() + 1) + ". Registrar nuevo genero"));
             if(opcGen != (generos.size() + 1)){
-                genero = generos.get(opcGen);
+                genero = generos.get((opcGen - 1));
             }else{
                 GeneroMusical nuevoGen = new GeneroMusical(InputHandler.input(Types.STRING_NO_VACIO, "Ingresa el nombre del genero: "));
                 genero = nuevoGen;

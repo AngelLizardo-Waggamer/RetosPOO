@@ -20,7 +20,16 @@ public class EvidenciaFinal {
         generosDisponibles.add(new GeneroMusical("Corridos Tumbados"));
         generosDisponibles.add(new GeneroMusical("Baladas"));
         ArrayList<PlayList> playlists = new ArrayList<PlayList>();
-        // TODO: Registrar las dos playlist predefinidas 
+
+        ArrayList<Cancion> cancionesPlaylistUno = new ArrayList<Cancion>();
+        ArrayList<Cancion> cancionesPlaylistDos = new ArrayList<Cancion>();
+        cancionesPlaylistUno.add(new Cancion("Heart to Heart", "3:31", "Mac DeMarco", "Mac de Marco", generosDisponibles.get(1)));
+        cancionesPlaylistUno.add(new Cancion("Die For You", "3:31", "Joji", "Dewain Whitmore Jr., Jacob Ray, Patrick \"J. Que\" Smith", generosDisponibles.get(1)));
+        playlists.add(new PlayList("Musica para dormir", cancionesPlaylistUno));
+        cancionesPlaylistDos.add(new Cancion("Harley Quinn", "2:23", "Fuerza Regida, Marshmello", "Daniel Gutierrez, Jesus Ortiz Paz, Jesus Rodriguez Jr., Jonathan Caro", generosDisponibles.get(0)));
+        cancionesPlaylistDos.add(new Cancion("ROMPE LA DOMPE", "2:46", "Junior H, Oscar Maydon, Peso Pluma", "Alexis Fierro", generosDisponibles.get(0)));
+        playlists.add(new PlayList("Corridos Tumbados Buenardos", cancionesPlaylistDos));
+        
         char opc;
         do{
            opc = menu();
@@ -34,22 +43,23 @@ public class EvidenciaFinal {
                 case 'B'->{ // Reproducir musica
                     System.out.println("----- Playlist disponibles -----");
                     for(int i = 0; i < playlists.size(); i++){
-                        System.out.println((i+1) + ". " + playlists.get(i).getDetalles()[0]);
+                        System.out.println((i+1) + ". " + playlists.get(i).getDetalles()[0] + ". ID: " + playlists.get(i).getDetalles()[1]);
                     }
                     int playSel = Integer.parseInt(InputHandler.rangedInput(RangedTypes.ENTERO, 1, playlists.size(), "Ingrese la playlist que desea reproducir: "));
-                    PlayList playlistSeleccionada = playlists.get(playSel);
+                    PlayList playlistSeleccionada = playlists.get((playSel - 1));
                     System.out.println("----- Canciones en la playlist  -----");
                     for(int c = 0; c < playlistSeleccionada.canciones.size(); c++){
                         Cancion tempCancion = playlistSeleccionada.canciones.get(c);
                         System.out.println((c+1) + ". (" + tempCancion.getDetalles()[1] + ") " + tempCancion.getDetalles()[0] + " - " + tempCancion.getDetalles()[2]);
                     }
                     int cancionSel = Integer.parseInt(InputHandler.rangedInput(RangedTypes.ENTERO, 1, playlistSeleccionada.canciones.size(), "Ingrese la cancion que desea reproducir: "));
-                    Cancion reproduccionActual = playlistSeleccionada.canciones.get(cancionSel);
+                    Cancion reproduccionActual = playlistSeleccionada.canciones.get((cancionSel - 1));
                     System.out.println("Reproduciendo ahora:\n" + reproduccionActual.getDetalles()[0] + " - " + reproduccionActual.getDetalles()[2]);
                     System.out.println("Duracion: " + reproduccionActual.getDetalles()[1]);
                     System.out.println("Genero: " + reproduccionActual.getDetalles()[4]);
                     System.out.println("Autores: " + reproduccionActual.getDetalles()[3]);
                 }
+                case 'C'->{}
                 default->{
                     System.out.println("Ingrese una opción válida");
                 }
